@@ -1,4 +1,5 @@
-# Coq
+# AINQ Alex is not Coq
+![Archaeopteryx named Alec](alec1.jpeg)
 
 [![GitLab CI][gitlab-badge]][gitlab-link]
 [![GitHub macOS CI][gh-macos-badge]][gh-macos-link]
