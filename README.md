@@ -1,4 +1,4 @@
-# AINQ Alex is not Coq
+# AINC Alec the Archaeopteryx is not Coq
 ![Archaeopteryx named Alec](alec1.jpeg)
 
 It turns out after i made this fork that rocq is the new name
