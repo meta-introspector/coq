@@ -1131,8 +1131,35 @@ let pr_goal_selector ~toplevel s =
         n t
     in
     prtac n t
+  
+  let pr_glob_tactic_level2 env n t =
+    let glob_printers =
+      (strip_prod_binders_glob_constr)
+    in
+    let rec prtac n (t:glob_tactic_expr) =
+      let pr = {
+        pr_tactic = prtac;
+        pr_constr = (fun env sigma -> pr_and_constr_expr (pr_glob_constr_env env sigma));
+        pr_dconstr = (fun env sigma -> pr_and_constr_expr (pr_glob_constr_env env sigma));
+        pr_lconstr = (fun env sigma -> pr_and_constr_expr (pr_lglob_constr_env env sigma));
+        pr_pattern = (fun env sigma -> pr_pat_and_constr_expr (pr_glob_constr_env env sigma));
+        pr_constant = pr_or_var (pr_and_short_name (pr_evaluable_reference_env env));
+        pr_lpattern = (fun env sigma -> pr_pat_and_constr_expr (pr_lglob_constr_env env sigma));
+        pr_reference = pr_ltac_or_var (pr_located pr_ltac_constant);
+        pr_name = pr_lident2;
+        pr_generic = Pputils.pr_glb_generic;
+        pr_extend = pr_glob_extend_rec prtac;
+        pr_alias = pr_glob_alias prtac;
+      } in
+      make_pr_tac env (Evd.from_env env)
+        pr glob_printers
+        tag_glob_atomic_tactic_expr tag_glob_tactic_expr
+        n t
+    in
+    prtac n t
 
   let pr_glob_tactic env = pr_glob_tactic_level env ltop
+  let pr_glob_tactic2 env = pr_glob_tactic_level2 env ltop
 
   let strip_prod_binders_constr n ty =
     let ty = EConstr.Unsafe.to_constr ty in
