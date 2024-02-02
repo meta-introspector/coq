@@ -1,3 +1,10 @@
+
+/home/mdupont/experiments/coq/_build/default//user-contrib/Ltac2/Init.vos
+/home/mdupont/experiments/coq/_build/default//theories/Init/Prelude.vo
+/home/mdupont/experiments/coq/_build/default//plugins
+
+COQLIB=/home/mdupont/experiments/coq/_build/default/ make -f build/CoqMakefile.make all
+
 # Coq
 
 [![GitLab CI][gitlab-badge]][gitlab-link]
