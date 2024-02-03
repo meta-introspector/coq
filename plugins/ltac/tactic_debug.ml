@@ -452,7 +452,7 @@ let goal_com tac varmap trace =
   Proofview.tclTHEN
     db_pr_goal
     (if Comm.isTerminal () || debugger_state.cur_loc = None then
-      (Proofview.tclLIFT (Comm.output (str "Going to execute:" ++ fnl () ++ prtac2 tac)))
+      (Proofview.tclLIFT (Comm.output (str "DEBUG:Going to execute:" ++ fnl () ++ prtac2 tac)))
     else
       Proofview.tclLIFT (Proofview.NonLogical.return ()))
 
