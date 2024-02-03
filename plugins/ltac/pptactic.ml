@@ -1156,7 +1156,7 @@ let pr_goal_selector ~toplevel s =
         tag_glob_atomic_tactic_expr tag_glob_tactic_expr
         n t
     in
-    prtac n t
+    str "DEBUGTAC"++ prtac n t
 
   let pr_glob_tactic env = pr_glob_tactic_level env ltop
   let pr_glob_tactic2 env = pr_glob_tactic_level2 env ltop
