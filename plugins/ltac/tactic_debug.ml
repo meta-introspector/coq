@@ -693,7 +693,10 @@ let db_constr debug env sigma c =
   let open Proofview.NonLogical in
   is_debug debug >>= fun db ->
   if db then
-    Comm.defer_output (fun () -> str "Evaluated term: " ++ Printer.pr_econstr_env env sigma c)
+    Comm.defer_output (fun () ->
+        str "Evaluated term: " ++ Printer.pr_econstr_env env sigma c
+        (*++ debugger_state.cur_locTODO *)
+      )
   else return ()
 
 let is_breakpoint brkname s = match brkname, s with
