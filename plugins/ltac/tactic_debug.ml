@@ -21,6 +21,10 @@ let prtac x =
   let env = Global.env () in
   Pptactic.pr_glob_tactic env x
 
+let prtac2 x =
+  let env = Global.env () in
+  Pptactic.pr_glob_tactic2 env x
+
 (* This module intends to be a beginning of debugger for tactic expressions.
    Currently, it is quite simple and we can hope to have, in the future, a more
    complete panel of commands dedicated to a proof assistant framework *)
@@ -448,7 +452,7 @@ let goal_com tac varmap trace =
   Proofview.tclTHEN
     db_pr_goal
     (if Comm.isTerminal () || debugger_state.cur_loc = None then
-      (Proofview.tclLIFT (Comm.output (str "Going to execute:" ++ fnl () ++ prtac tac)))
+      (Proofview.tclLIFT (Comm.output (str "Going to execute:" ++ fnl () ++ prtac2 tac)))
     else
       Proofview.tclLIFT (Proofview.NonLogical.return ()))
 

@@ -61,6 +61,8 @@ sig
 
   val print : t -> Pp.t
   (** Pretty-printer. *)
+  val print2 : t -> Pp.t
+  (** Pretty-printer debug. *)
 
   module Set : Set.S with type elt = t
   (** Finite sets of identifiers. *)

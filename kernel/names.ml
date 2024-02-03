@@ -64,6 +64,8 @@ struct
   let to_string id = id
 
   let print id = str id
+  let print2 id = str id
+
 
   module Set = CString.Set
   module Map = CString.Map

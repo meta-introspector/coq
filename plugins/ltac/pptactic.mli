@@ -142,6 +142,7 @@ val pr_raw_tactic : env -> Evd.evar_map -> raw_tactic_expr -> Pp.t
 val pr_raw_tactic_level : env -> Evd.evar_map -> entry_relative_level -> raw_tactic_expr -> Pp.t
 
 val pr_glob_tactic : env -> glob_tactic_expr -> Pp.t
+val pr_glob_tactic2 : env -> glob_tactic_expr -> Pp.t
 
 val pr_atomic_tactic : env -> Evd.evar_map -> atomic_tactic_expr -> Pp.t
 
