@@ -6,6 +6,11 @@
 COQLIB=/home/mdupont/experiments/coq/_build/default/ make -f build/CoqMakefile.make all
 
 # Coq
+# AINC Alec the Archaeopteryx is not Coq
+![Archaeopteryx named Alec](alec1.jpeg)
+
+It turns out after i made this fork that rocq is the new name
+https://github.com/coq/ceps/blob/coq-roadmap/text/069-coq-roadmap.md#change-of-name-coq---the-rocq-prover
 
 [![GitLab CI][gitlab-badge]][gitlab-link]
 [![GitHub macOS CI][gh-macos-badge]][gh-macos-link]
